@@ -1,0 +1,30 @@
+package com.company;
+
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        boolean isPrime=true;
+	for (int i=1;i<=100;i++)
+	{ if (isPrime(i)==true)
+            System.out.println("простое число"+i);
+
+    }
+
+    }
+    public static boolean isPrime(int n)
+    {
+        boolean temp=true;
+        for (int i = 2; i < n; i++)
+        {
+            if ((n % i) == 0)
+            {
+                temp=false;
+            }
+
+        }
+
+        return temp;
+    }
+}

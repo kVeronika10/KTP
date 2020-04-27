@@ -1,0 +1,26 @@
+package com.company;
+import java.util.Scanner;
+
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert the string: ");
+        String string=in.nextLine();
+        System.out.print("Insert n: ");
+        int n=in.nextInt();
+        System.out.print(repeat(string, n) + "- rezult ");
+        
+    }
+    public static String repeat(String string, int n)
+    {
+        String newString = new String();
+        for (int i=0;i<string.length();i++)
+        {
+            for(int j=0;j<n;j++) {
+                newString += string.charAt(i);
+            }
+        }
+        return newString;
+    }
+
+}

@@ -1,0 +1,28 @@
+package com.company;
+import java.util.Scanner;
+
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.println("Insert N,a and b: ");
+        int N=in.nextInt();
+        int a=in.nextInt();
+        int b=in.nextInt();
+        System.out.print(operation(N,a,b));
+
+    }
+    public static String operation(int N, int a, int b)
+    {
+       String  string="";
+        if (a+b==N)
+            string = "added";
+        else if (a-b==N)
+            string="subtracted";
+        else if (a/b==N)
+            string="divided";
+        else if(a*b==N)
+            string="multiplied";
+        else string="none";
+        return string;
+    }
+}

@@ -1,0 +1,18 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        System.out.print("Insert first string: ");
+        Scanner in=new Scanner(System.in);
+        String firstString=in.nextLine();
+        System.out.print("Insert second string: ");
+        String secondString=in.nextLine();
+        System.out.print("Is stranger pair? "+ isStrangePair(firstString,secondString));
+    }
+    public static boolean isStrangePair(String firstString, String secondString)
+    {
+        if (firstString.charAt(0)==secondString.charAt(secondString.length()-1) && firstString.charAt(firstString.length()-1)==secondString.charAt(0))
+            return true;
+        else return false;
+    }
+}

@@ -1,0 +1,19 @@
+package com.company;
+import java.util.Scanner;
+
+class Scratch {
+    public static void main(String[] args) {
+        System.out.print("Insert the number: ");
+        Scanner in=new Scanner(System.in);
+        int number=in.nextInt();
+        System.out.print("sequence amount= " + addUpTo(number));
+        
+    }
+    public static int addUpTo(int a)
+    {
+        int summa = 0;
+        for (int i=1;i<=a;i++)
+            summa+=i;
+        return summa;
+    }
+}

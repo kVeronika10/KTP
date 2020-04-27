@@ -1,0 +1,16 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert a= ");
+        int a=in.nextInt();
+        System.out.print("Insert b= ");
+        int b=in.nextInt();
+        System.out.print("Max c= "+ nextEdge(a,b));
+    }
+    public static int nextEdge(int a,int b)
+    {
+       return a+b-1; // третья сторона всегда меньше суммы двух других сторон, поэтому максимальное значение такое
+    }
+}

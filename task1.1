@@ -1,0 +1,21 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Введите делимое ="  );
+        int a=in.nextInt();
+        System.out.print("Введите делитель ="  );
+        int b=in.nextInt();
+        int ostatok=remainder(a,b);
+        System.out.println(" Остаток от деления= "+ostatok);
+    }
+
+   public static int remainder(int a, int b)
+   {
+       int ostatok;
+       return ostatok=a%b;
+   }
+}

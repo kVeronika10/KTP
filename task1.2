@@ -1,0 +1,21 @@
+package com.company;
+import java.util.Scanner;
+
+class Scratch {
+    public static void main (String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Введите основание треугольника= ");
+        int osnovanie=in.nextInt();
+        System.out.print("Введите высоту треугольника= ");
+        int h=in.nextInt();
+        int S=triArea(osnovanie,h);
+        System.out.print("Площадь треугольника= "+S);
+    }
+
+    public static int triArea(int a, int b)
+    {
+        int S;
+        return S=a*b/2;
+    }
+
+}

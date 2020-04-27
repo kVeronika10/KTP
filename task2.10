@@ -1,0 +1,22 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        System.out.print("Your step: ");
+        Scanner in=new Scanner(System.in);
+        int step=in.nextInt();
+        System.out.print("number of fields: "+boxSeq(step));
+    }
+    public static int boxSeq(int step)
+    {
+        int field=0;
+        for (int i=1;i<=step;i++)
+        {
+            if(i%2!=0)
+                field+=3;
+            else
+                field-=1;
+        }
+        return field;
+    }
+}

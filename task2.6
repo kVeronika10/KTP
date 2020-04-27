@@ -1,0 +1,23 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        System.out.print("Insert a number of fibonaci: ");
+        Scanner in=new Scanner(System.in);
+        int chislo=in.nextInt();
+        System.out.print("rezult= "+Fibonacci(chislo));
+    }
+    public static int Fibonacci(int chislo)
+    {
+        int n1=1;
+        int n2=1;
+        int rezult=0;
+        for (int i=2;i<=chislo;i++)
+        {
+            rezult=n1+n2;
+            n1=n2;
+            n2=rezult;
+        }
+        return rezult;
+    }
+}

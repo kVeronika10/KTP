@@ -1,0 +1,29 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Amount of elements: ");
+        int n=in.nextInt();
+        int[] arr=new int [n];
+        for (int i=0;i<n;i++) {
+            System.out.print("Insert the " + i + "st element ");
+            arr[i]=in.nextInt();
+        }
+        System.out.print("Whole- "+isAvgWhole(arr));
+        
+    }
+
+    public static boolean isAvgWhole(int[] arr)
+    {
+        boolean isTrue;
+        double summa=0;
+        for(int i=0;i<arr.length;i++)
+            summa+=arr[i];
+        summa/=arr.length;
+        if (summa%1==0)
+            return isTrue=true;
+            else
+                return isTrue=false;
+    }
+}

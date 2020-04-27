@@ -1,0 +1,21 @@
+package com.company;
+import java.util.Scanner;
+
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("How many chikens? ");
+        int chikens=in.nextInt();
+        System.out.print("How many cows? ");
+        int cows=in.nextInt();
+        System.out.print("How many pigs? ");
+        int pigs=in.nextInt();
+        int Legs=animals(chikens,cows,pigs);
+        System.out.print("Amount legs= "+Legs);
+    }
+    public static int animals(int chikens, int cows,int pigs)
+    {
+        int legs;
+        return legs=2*chikens+4*cows+4*pigs;
+    }
+}

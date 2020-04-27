@@ -1,0 +1,23 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        System.out.print("Insert index: ");
+        Scanner in=new Scanner(System.in);
+        String index=in.nextLine();
+        System.out.print("False or true? "+ isValid(index));
+    }
+    public static boolean isValid(String index)
+    {
+        boolean isTrue = true;
+        for(int i=0; i<5; i++) {
+            if(index.charAt(i)<'0' || index.charAt(i)>'9' || index.length()>5)
+            {
+                isTrue=false;
+                break;
+            }
+            else isTrue=true;
+        }
+        return isTrue;
+    }
+}

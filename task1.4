@@ -1,0 +1,23 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Prob= ");
+        float prob=in.nextFloat();
+        System.out.print("Size= ");
+        int size=in.nextInt();
+        System.out.print("Pay= ");
+        int pay=in.nextInt();
+        System.out.print("Rezult:  " + profitableGamble(prob,size,pay));
+
+        
+    }
+    public static boolean profitableGamble(float prob,int size,int pay)
+    {
+        if (prob*size>pay)
+            return true;
+        else
+            return false;
+    }
+}

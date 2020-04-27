@@ -1,0 +1,23 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        System.out.print("Insert word: ");
+        Scanner in=new Scanner(System.in);
+        String word=in.nextLine();
+        System.out.print("Insert second string: ");
+        String second=in.nextLine();
+        System.out.println("Is prefix? "+isPrefix(word,second));
+        System.out.println("Is suffix? "+isSuffix(word,second));
+    }
+    public static boolean isPrefix (String word,String prefix)
+    {
+        return word.startsWith(prefix);
+
+    }
+    public static boolean isSuffix (String word,String suffix)
+    {
+    
+        return word.endsWith(suffix);
+    }
+}

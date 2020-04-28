@@ -1,0 +1,59 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert amount of elements for the 1st array: ");
+        int amount1=in.nextInt();
+        int[] arr1=new int [amount1];
+        for (int i=0;i<amount1;i++) {
+            System.out.print("Insert the " + i + "st element ");
+            arr1[i] = in.nextInt();
+        }
+        System.out.print("Insert amount of elements for the 2st array: ");
+        int amount2=in.nextInt();
+        int[] arr2=new int [amount2];
+        for (int i=0;i<amount2;i++) {
+            System.out.print("Insert the " + i + "st element ");
+            arr2[i] = in.nextInt();
+        }
+        System.out.print("Same or not?: "+same(arr1,arr2));
+    }
+
+    public static boolean same(int[] arr1,int[] arr2)
+    {
+
+        int kolvo1=0;
+        int kolvo2=0;
+        int unique1=arr1.length;
+        int unique2=arr2.length;
+        for (int i=0;i<arr1.length;i++)
+        {
+            //подсчет количества повторяющихся элементов в 1м массиве
+            for (int j=i+1;j<arr1.length;j++)
+            {
+                if (arr1[i]==arr1[j]) {
+                    kolvo1 += 1;
+                    break;
+                }
+            }
+        }
+        unique1-=kolvo1;// вычисление уникальных элементов для 1го массива
+        // подсчет количества повторяющихся элементов во 2м массиве
+        for (int i=0;i<arr2.length;i++)
+        {
+            for (int j=i+1;j<arr2.length;j++)
+            {
+                if (arr2[i]==arr2[j]) {
+                    kolvo2 += 1;
+                    break;
+                }
+            }
+        }
+        unique2-=kolvo2;// вычисление уникальных элементов во 2м массиве
+      if (unique1==unique2)
+          return true;
+       else return false;
+
+    }
+}

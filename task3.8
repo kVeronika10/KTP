@@ -1,0 +1,25 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert a binary code: ");
+        String n=in.nextLine();
+        System.out.print("Longest zero-string: "+longestZero(n));
+    }
+    public static StringBuilder longestZero(String str) {
+        StringBuilder longest = new StringBuilder();
+        int count = 0;
+        int maxCount = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == '0') {
+                count += 1;
+            } else
+                count = 0;
+            maxCount = Math.max(maxCount, count);
+        }
+        for (int i=0;i<maxCount;i++)
+            longest.append('0');
+        return longest;
+    }
+}

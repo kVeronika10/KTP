@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert a code: ");
+        String str=in.nextLine();
+        System.out.print("True or false? "+isValidHexCode(str));
+
+    }
+    public static boolean isValidHexCode(String code)
+    {
+        boolean flag=true;
+        if ((code.length() != 6) || (code.charAt(0)!='#')) {
+            flag= false;
+        }
+        else {
+            for (int i = 0; i < code.length(); i++) {
+                if ((code.charAt(i) < '0') || (code.charAt(i) > '9' || (Character.toLowerCase(code.charAt(i)) > 'f') || (Character.toLowerCase(code.charAt(i)) < 'a')))
+                    flag=true;
+            }
+        }
+        return flag;
+    }
+}

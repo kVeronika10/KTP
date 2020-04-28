@@ -1,0 +1,29 @@
+package com.company;
+import java.util.Scanner;
+
+import static java.lang.System.*;
+
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        out.print("Insert your string: ");
+        String string=in.nextLine();
+        out.print(" "+flipEndChars(string));
+    }
+    public static String flipEndChars(String string)
+    {
+        char firstSymbol=string.charAt(0);
+        char lastSymbol=string.charAt(string.length()-1);
+        // проверка входного слова на корректность
+        if (string.length()<2) {
+              out.print("Incompatible.");
+        }
+        // проверка входного слова на одинаковые 1 и последний символы
+        else if(firstSymbol==lastSymbol)
+            out.print("Two's a pair.");
+        else
+            // замена 1го символа последним, а последнего- первым
+            string=string.substring(string.length()-1)+string.substring(1,string.length()-1)+string.substring(0,1);
+        return string;
+    }
+}

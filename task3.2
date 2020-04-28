@@ -1,0 +1,18 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert your string: ");
+        String string=in.nextLine();
+        System.out.print("Number of second zip: "+findZip(string));
+    }
+    public static int findZip(String string)
+    {
+            int firstIndex=string.indexOf("zip")+2;// находим индекс окончания "zip" после первого его вхождения в строку
+            int secondIndex=string.indexOf("zip", firstIndex);// находим индекс второго вхождения "zip" в строку
+            if (secondIndex>0)
+               return secondIndex;
+            else return -1;
+    }
+}

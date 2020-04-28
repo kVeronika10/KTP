@@ -1,0 +1,22 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert the number: ");
+        int n=in.nextInt();
+        System.out.print("Next prime number: "+nextPrime(n));
+        
+    }
+    public static int nextPrime(int n)
+    {
+        boolean temp=true;
+        for(int i=2;i<n;i++) {
+            if ((n % i) == 0) {
+                n += 1;
+                i=2;
+            }
+        }
+        return n;
+    }
+}

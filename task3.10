@@ -1,0 +1,20 @@
+package com.company;
+import java.util.Scanner;
+import java.util.concurrent.SynchronousQueue;
+
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert a= ");
+        int a=in.nextInt();
+        System.out.print("Insert b= ");
+        int b=in.nextInt();
+        System.out.print("Insert c ");
+        int c=in.nextInt();
+        System.out.print("Right triangle or not? "+rightTriangle(a,b,c));
+    }
+    public static boolean rightTriangle(int a,int b,int c)
+    {
+        return (Math.pow(a, 2) + Math.pow(b, 2) == Math.pow(c, 2)) || (Math.pow(b, 2) + Math.pow(c, 2) == Math.pow(a, 2)) || (Math.pow(c, 2) + Math.pow(a, 2) == Math.pow(b, 2));
+    }
+}

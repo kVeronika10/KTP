@@ -1,0 +1,22 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert your number: ");
+        int number=in.nextInt();
+        System.out.print("Is number perfect? "+checkPerfect(number));
+    }
+    public static boolean checkPerfect(int number)
+    {
+        int sum=0;
+        for (int i=1;i<=number/2;i++)
+        {
+            if(number%i==0)
+               sum+=i;
+        }
+        if (sum==number)
+            return true;
+        else return false;
+    }
+}

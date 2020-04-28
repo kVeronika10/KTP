@@ -1,0 +1,27 @@
+package com.company;
+import java.util.Scanner;
+class Scratch {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        System.out.print("Insert a: ");
+        int a=in.nextInt();
+        System.out.print("Insert b: ");
+        int b=in.nextInt();
+        System.out.print("Insert c: ");
+        int c=in.nextInt();
+        System.out.print("Number of solutions: "+solutions(a,b,c));
+    }
+    public static int solutions(int a,int b,int c)
+    {
+        int number;
+        double D=(Math.pow(b,2)-4*a*c);
+        if (D>0)
+             number=2;
+        else
+            if (D==0)
+            number=1;
+        else
+            number=0;
+        return number;
+    }
+}

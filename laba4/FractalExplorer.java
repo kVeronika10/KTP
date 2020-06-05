@@ -14,19 +14,15 @@ import java.awt.image.*;
 
 public class FractalExplorer
 {
-    private int display_size; /* Целое число «размер экрана», которое является
-        шириной и высотой отображения в пикселях */
+    private int display_size;
 
-    private JImageDisplay display; /* Ссылка JImageDisplay, для обновления отображения в разных методах в
-        процессе вычисления фрактала */
+    private JImageDisplay display; 
 
-    private FractalGenerator fractal; // Объект FractalGenerator
+    private FractalGenerator fractal; 
 
-    private Rectangle2D.Double range; /* Объект Rectangle2D.Double, указывающий диапазон
-        комплексной плоскости, которая выводится на экран */
+    private Rectangle2D.Double range;
 
-    public FractalExplorer(int size) /* Конструктор, который принимает значение размера отображения в качестве аргумента,
-        затем сохраняет это значение в соответствующем поле, а также инициализирует объекты диапазона и фрактального генератора */ {
+    public FractalExplorer(int size)  {
         display_size = size;
         fractal = new Mandelbrot();
         range = new Rectangle2D.Double();
@@ -35,9 +31,7 @@ public class FractalExplorer
     }
 
 
-    /**
-     * Метод, который инициализирует графический интерфейс Swing
-     */
+    
     public void createAndShowGUI() {
         display.setLayout(new BorderLayout());
         JFrame frame = new JFrame("Fractal Explorer");
@@ -52,16 +46,14 @@ public class FractalExplorer
         MouseHandler click = new MouseHandler();
         display.addMouseListener(click);
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // операция закрытия окна по умолчанию
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 
         frame.pack();
         frame.setVisible(true);
-        frame.setResizable(false); // запрет изменения размеров окна
+        frame.setResizable(false); 
     }
 
-    /**
-     * Метод, который должен циклически проходить через каждый пиксель в отображении
-     */
+  
     private void drawFractal() {
         for (int x = 0; x < display_size; x++) {
             for (int y = 0; y < display_size; y++) {
@@ -82,19 +74,16 @@ public class FractalExplorer
                 }
             }
         }
-        display.repaint(); //отрисовка заново
+        display.repaint(); 
     }
 
-    /**
-     * Внутренний класс для обработки событий
-     * java.awt.event.ActionListener от кнопки сброса
-     */
+    
     public class ButtonHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             String command = e.getActionCommand();
 
-            if (command.equals("Reset")) //вырисовка фрактала заново
+            if (command.equals("Reset")) 
             {
                 fractal.getInitialRange(range);
                 drawFractal();

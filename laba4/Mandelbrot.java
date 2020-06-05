@@ -5,8 +5,7 @@ import java.awt.geom.Rectangle2D;
 public class Mandelbrot extends FractalGenerator {
     public static final int MAX_ITERATIONS = 2000;
 
-    /** Метод, позволяющий генератору фракталов определить наиболее «интересную»
-     * 	область комплексной плоскости для конкретного фрактала */
+   
     public void getInitialRange(Rectangle2D.Double range)
     {
         range.x = -2;
@@ -14,7 +13,7 @@ public class Mandelbrot extends FractalGenerator {
         range.height = 3;
         range.width = 3;
     }
-    /** Метод реализует итеративную функцию для фрактала Мандельброта */
+    
     public int numIterations(double x, double y)
     {
         double x1 = 0;
@@ -31,7 +30,7 @@ public class Mandelbrot extends FractalGenerator {
                 return i;
             }
         }
-        return -1; // выход за границы
+        return -1;
     }
 
 }
